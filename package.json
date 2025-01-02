@@ -1,0 +1,19 @@
+{
+  "name": "cucumber_typescript_project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js test || true",
+    "posttest": "npx ts-node helper/testReportHelper.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@cucumber/cucumber": "^11.0.1",
+    "@playwright/test": "^1.48.2",
+    "multiple-cucumber-html-reporter": "^3.8.0",
+    "ts-node": "^10.9.2"
+  }
+}
