@@ -16,4 +16,4 @@ Scenario Outline:
     Examples:
     |username|password    |book   |
     |Thivakar|Thivakar12!@|roomies|
-    |Thivakar|Thivakar12!@|bbieee33 | 
+    |Thivakar|Thivakar12!@|bbiee| 

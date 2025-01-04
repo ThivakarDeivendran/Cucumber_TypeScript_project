@@ -23,6 +23,7 @@
             "html:testReportResults/cucumber-report.html",
             "json:testReportResults/cucumber-report.json",
             "rerun:@rerun.txt"
-        ]
+        ],
+            "parallel":2
     }
 }

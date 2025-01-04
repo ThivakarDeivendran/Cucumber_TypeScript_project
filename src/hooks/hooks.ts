@@ -13,7 +13,6 @@ Before(async function(){
         page=await context.newPage();
     pageFixture.page =page;
 })
-
 After(async function({pickle,result}){
     console.log(result.status);
     if(result?.status == Status.FAILED){
@@ -23,7 +22,6 @@ After(async function({pickle,result}){
     pageFixture.page.close();
     context.close();
 })
-
 AfterAll(async function(){
     await browser.close(); 
 })

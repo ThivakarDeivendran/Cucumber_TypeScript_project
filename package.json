@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "pretest": "npx ts-node helper/initFile.ts",
     "test": "cucumber-js test || true",
     "posttest": "npx ts-node helper/testReportHelper.ts",
-    "test:failed":"cucumber-js -p rerun @rerun.txt"
+    "test:failed": "cucumber-js -p rerun @rerun.txt"
   },
   "keywords": [],
   "author": "",
