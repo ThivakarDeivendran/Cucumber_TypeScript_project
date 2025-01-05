@@ -5,6 +5,8 @@
         "require":["src/test/stepDefinitions/*.ts","src/hooks/hooks.ts"],
         "requireModule":["ts-node/register"],
         "dryRun":false,
+        "publishQuiet": true,
+        "tags":"",
         "format":[
             "progress",
             "progress-bar",
