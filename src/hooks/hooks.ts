@@ -1,17 +1,26 @@
-import { Before , After, BeforeAll, AfterAll, AfterStep, Status } from "@cucumber/cucumber"
-const {Browser, Page, chromium, Context } =require ("@playwright/test");
+import { Before , After, BeforeAll, AfterAll, Status } from "@cucumber/cucumber"
+const  {chromium, Browser, Page, Context } =require  ("@playwright/test");
+const { getBrowser } =require  ("../helper/browserManagement/BrowserSetting");
 import { pageFixture } from "./pageFixture";
+import { createLogger } from "winston";
+const { getEnvironment } =require ("../helper/env/env");
+import { loggerOption } from "../helper/util/logger";
 
 let browser = Browser;
 let page = Page;
 let context = Context;
+
 BeforeAll(async function(){
-    browser =await chromium.launch({headless : false});
+    // getEnvironment();
+    // browser = await getBrowser();
+     browser =await chromium.launch({headless : false});   
 })
-Before(async function(){
+Before(async function({pickle}){
+    const name = pickle.name + pickle.id;
      context = await browser.newContext();
         page=await context.newPage();
     pageFixture.page =page;
+    pageFixture.loggerOption =createLogger(loggerOption(name))
 })
 After(async function({pickle,result}){
     console.log(result.status);
@@ -24,4 +33,5 @@ After(async function({pickle,result}){
 })
 AfterAll(async function(){
     await browser.close(); 
+    pageFixture.loggerOption.close();
 })

@@ -4,6 +4,7 @@ import { pageFixture } from "../../hooks/pageFixture";
 When('User search for a {string}', async function (book) {
   await pageFixture.page.waitForTimeout(1000);
     await pageFixture.page.locator("input[type='search']").fill(book)
+    pageFixture.loggerOption.info("Search book : " + book);
     await pageFixture.page.click("mat-option[role='option'] span")
     await pageFixture.page.waitForTimeout(1000);
   });
@@ -16,4 +17,5 @@ When('User search for a {string}', async function (book) {
   Then('cart bag should be updated', async function () {
     await pageFixture.page.waitForTimeout(1000);
     console.log("Testing the AddToCart")
+    pageFixture.loggerOption.info("Add 2 Cart successfully");
   });

@@ -10,8 +10,12 @@
       "allowSyntheticDefaultImports": true,
       "resolveJsonModule": true,
       "skipLibCheck": true,
-      "sourceMap": true
-    },
+      "sourceMap": true,
+      "typeRoots": [
+        "./node_modules/@types",
+        "src/helper/types"
+      ],
+    }, 
     "include": ["src/**/*.ts"],
     "exclude": ["node_modules"]
   }
