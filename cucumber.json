@@ -6,6 +6,7 @@
         "requireModule":["ts-node/register"],
         "dryRun":false,
         "format":[
+            "progress",
             "progress-bar",
             "html:testReportResults/cucumber-report.html",
             "json:testReportResults/cucumber-report.json",
