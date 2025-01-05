@@ -16,13 +16,13 @@ BeforeAll(async function(){
     // browser = await getBrowser();
      browser =await chromium.launch({headless : false});   
 })
-Before(async function({pickle}){
+Before(async function({ pickle }){
     const name = pickle.name + pickle.id;
-     context = await browser.newContext();
+     context = await browser.newContext({
         recordVideo: {
         dir: "testReportResults/reportVideos"
         }
-
+    });
         page=await context.newPage();
         pageFixture.page =page;
         pageFixture.loggerOption =createLogger(loggerOption(name))
